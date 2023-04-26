@@ -78,6 +78,7 @@ customTools.columns = {
     class: Columns,
     config : {
       tools : customToolsCol, 
+      EditorJsLibrary: EditorJS
     }
 }
 
