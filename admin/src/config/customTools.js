@@ -14,7 +14,7 @@ import CheckList from '@editorjs/checklist'
 import Delimiter from '@editorjs/delimiter'
 import InlineCode from '@editorjs/inline-code'
 import Columns from '@calumk/editorjs-columns'
-
+import EditorJS from '@editorjs/editorjs';
 let customToolsCol = {
   embed: Embed,
   table: {
@@ -107,6 +107,7 @@ customTools.columns = {
     class: Columns,
     config : {
       tools : customToolsCol, 
+      EditorJsLibrary : EditorJS
     }
 }
 
