@@ -16,37 +16,8 @@ import InlineCode from '@editorjs/inline-code'
 import Columns from '@calumk/editorjs-columns'
 import EditorJS from '@editorjs/editorjs';
 let customToolsCol = {
-  embed: Embed,
-  table: {
-    class: Table,
-    inlineToolbar: true,
-  },
-  list: {
-    class: List,
-    inlineToolbar: true,
-  },
-  LinkTool: {
-    class: LinkTool,
-    config: {
-      endpoint: `/api/${PluginId}/link`,
-    },
-  },
-  raw: {
-    class: Raw,
-    inlineToolbar: true,
-  },
-  header: {
-    class: Header,
-    inlineToolbar: true,
-  },
-  quote: {
-    class: Quote,
-    inlineToolbar: true,
-    config: {
-      quotePlaceholder: 'Quote',
-      captionPlaceholder: 'Quote`s author',
-    },
-  },
+  raw: Raw,
+  header: Header,
   delimiter: Delimiter,
 };
 
