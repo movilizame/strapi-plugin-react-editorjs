@@ -13,8 +13,9 @@ import Marker from '@editorjs/marker'
 import CheckList from '@editorjs/checklist'
 import Delimiter from '@editorjs/delimiter'
 import InlineCode from '@editorjs/inline-code'
+import Columns from '@calumk/editorjs-columns'
 
-const customTools = {
+let customTools = {
   embed: Embed,
   table: {
     class: Table,
@@ -65,6 +66,13 @@ const customTools = {
   },
   delimiter: Delimiter,
   inlineCode: InlineCode,
+}
+
+customTools.columns = {
+    class: Columns,
+    config : {
+      tools : { ...customTools }, 
+    }
 }
 
 export default customTools
