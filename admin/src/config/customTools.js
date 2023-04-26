@@ -15,6 +15,41 @@ import Delimiter from '@editorjs/delimiter'
 import InlineCode from '@editorjs/inline-code'
 import Columns from '@calumk/editorjs-columns'
 
+let customToolsCol = {
+  embed: Embed,
+  table: {
+    class: Table,
+    inlineToolbar: true,
+  },
+  list: {
+    class: List,
+    inlineToolbar: true,
+  },
+  LinkTool: {
+    class: LinkTool,
+    config: {
+      endpoint: `/api/${PluginId}/link`,
+    },
+  },
+  raw: {
+    class: Raw,
+    inlineToolbar: true,
+  },
+  header: {
+    class: Header,
+    inlineToolbar: true,
+  },
+  quote: {
+    class: Quote,
+    inlineToolbar: true,
+    config: {
+      quotePlaceholder: 'Quote',
+      captionPlaceholder: 'Quote`s author',
+    },
+  },
+  delimiter: Delimiter,
+};
+
 let customTools = {
   embed: Embed,
   table: {
@@ -71,7 +106,7 @@ let customTools = {
 customTools.columns = {
     class: Columns,
     config : {
-      tools : { ...customTools }, 
+      tools : customToolsCol, 
     }
 }
 
