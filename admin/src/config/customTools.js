@@ -22,7 +22,16 @@ let customToolsCol = {
 };
 
 let customTools = {
-  embed: Embed,
+  embed: {
+    class: Embed,
+    config: {
+      services: {
+        instagram: true,
+        youtube: true,
+        twitter: true,
+      }
+    }
+  },
   table: {
     class: Table,
     inlineToolbar: true,
@@ -31,14 +40,14 @@ let customTools = {
     class: List,
     inlineToolbar: true,
   },
-  warning: {
+  /* warning: {
     class: Warning,
     inlineToolbar: true,
     config: {
       titlePlaceholder: 'Title',
       messagePlaceholder: 'Message',
     },
-  },
+  }, */
   code: Code,
   LinkTool: {
     class: LinkTool,
@@ -77,7 +86,7 @@ let customTools = {
 customTools.columns = {
     class: Columns,
     config : {
-      tools : customToolsCol, 
+      tools : { ... customTools }, 
       EditorJsLibrary: EditorJS
     }
 }
